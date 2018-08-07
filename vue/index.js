@@ -8,4 +8,11 @@ var app = new Vue({
 });
 
 app.message = 'this is first vue';
-app.seen = false;
+// app.seen = false;
+
+var app2 = new Vue({
+    el: '#app-2',
+    data: {
+        message: '页面加载于 ' + new Date().toLocaleString()
+    }
+});
