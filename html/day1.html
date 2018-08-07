@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <meta name="Keywords", content="新闻，网易，关键词搜索，便于抓取">
+    <meta name="Description", content="内容描述">
+    <title>网页标题</title>
+
+    <style type="text/css">
+        p{
+            font-size: 30px;
+        }
+        a{
+            display: block;
+            font-size: 30px;
+            width: 300px;
+            height: 40px;
+            background-color: red;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 10px;
+            /*-webkit-animation: faguang 1s ease 0s infinite alternate;*/
+        }
+        a:hover{
+            background-color: pink;
+        }
+        /*发光 */
+        @-webkit-keyframes faguang {
+            from{
+                box-shadow: 0px 0px 1px red;
+                transform: rotate(0);
+            }
+            to{
+                box-shadow: 0px 0px 70px blue;
+                transform: rotate(360deg);
+            }
+        }k
+    </style>
+</head>
+<body>
+
+    <div>
+        <h1>标题1</h1>
+        <h2>标题2</h2>
+        <h3>标题3</h3>
+        <h4>标题3</h4>
+        <h5>标题3</h5>
+        <h6>标题3</h6>
+
+        <p>
+            段落标签，这个是文本容器，里面只能放文本
+        </p> <!--段落标签-->
+
+
+        <!--title 鼠标在连接上的悬停文本-->
+        <!--target 目标，是否在新标签页打开-->
+        <a href="http://www.baidu.com" title="悬停文本" target="_blank">百度</a>
+        <br>
+
+        <a href="#maodian1">锚点索引1</a>
+
+        <!--id表示锚点-->
+        <p>锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点
+            锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点
+            锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点
+            锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点
+            锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点
+            锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点
+            锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点
+            锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点
+            锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点
+            锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点锚点</p>
+
+        <p id="maodian1">锚点测试1</p>
+
+
+
+        <p><img src="images/timg.jpeg" alt="图片"></p>
+
+    </div>
+
+</body>
+</html>

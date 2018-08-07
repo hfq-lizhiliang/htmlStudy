@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <h3>表单提交</h3>
+    <form action="" method="post">
+        <p>
+            请输入姓名：
+            <input type="text" value="默认有值"/>
+        </p>
+
+        <p>
+            请输入密码：
+            <input type="password" value="密码"/>
+        </p>
+        <p>
+            请选择性别：
+            <input type="radio" name="sex" checked/> 男
+            <input type="radio" name="sex"/> 女
+        </p>
+        <p>
+            请选择学历（下拉列表）：
+            <select name="schools">
+                <option value="xiaoxue">小学</option>
+                <option value="chuzhong" selected>初中</option>
+                <option value="gaozhong">高中</option>
+                <option value="daxue">大学</option>
+            </select>
+        </p>
+
+        <p> 多选；
+            <input type="checkbox" name="check1"/>选择1
+            <input type="checkbox" name="check2"/>选择2
+            <input type="checkbox" name="check3"/>选择3
+            <input type="checkbox" name="check4"/>选择4
+        </p>
+        <p>
+            签名：
+            <textarea cols="30", rows="10"></textarea>
+
+        </p>
+
+        <p>
+            一般按钮
+            <input type="button" value="普通按钮">
+
+        </p>
+        <p>
+            提交按钮
+            <input type="submit" value="提交按钮">
+
+        </p>
+        <p>
+            重置按钮
+            <input type="reset" value="重置按钮">
+        </p>
+    </form>
+</div>
+
+</body>
+</html>
