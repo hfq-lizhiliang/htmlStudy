@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <!--权重计算   id  class  属性 -->
+    <style type="text/css">
+        /* 1 0 0 */
+        #div1{
+            color: red;
+        }
+        /* 1 1 1 */
+        #div1 .div2 p{
+            color:blue;
+        }
+        /* 0 1 1 */
+        .div2 p{
+            color: green;
+        }
+    </style>
+
+</head>
+<body>
+<div id="div1">
+
+    <div class="div2">
+        <ul>
+            <li>
+                <p>你好</p>
+            </li>
+        </ul>
+    </div>
+
+</div>
+</body>
+</html>
