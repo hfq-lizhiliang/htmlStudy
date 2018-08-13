@@ -43,7 +43,68 @@
     <input v-model="message">
 </div>
 
+<br>
 
+<div id="app-7">
+    <ul>
+        <li v-for="item in items">
+            {{ item.message }}
+        </li>
+    </ul>
+</div>
+
+<br>
+
+<div id='app-8'>
+    <ul>
+        <li v-for="n in evenNumbers">{{ n }}</li>
+
+    </ul>
+</div>
+
+<br>
+
+<div id='app-9'>
+    <ul>
+        <li v-for="n in even(numbers)">{{ n }}</li>
+
+    </ul>
+</div>
+
+<br>
+
+<div id='app-10'>
+    <span v-for="n in 10">
+        {{ n }}
+    </span>
+</div>
+
+<div id="app-11">
+    <runoob></runoob>
+</div>
+
+
+<div id="app-12">
+    <button v-on:click="counter += 1">Add 1</button>
+    <p>The button above has been clicked {{ counter }} times.</p>
+</div>
+
+
+<div id="app-13">
+    <blog-post title="My journey with Vue"></blog-post>
+    <blog-post title="Blogging with Vue"></blog-post>
+    <blog-post title="Why Vue is so fun"></blog-post>
+</div>
+
+<div id="app-14">
+    <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title"></blog-post>
+</div>
+
+<div id="app-15">
+    <alert-box>
+        Something bad happened.
+    </alert-box>
+</div>
 
 <script src="index.js"></script>
 
