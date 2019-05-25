@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-bind="http://www.w3.org/1999/xhtml" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 在html头部引入vue-->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+
+
+</head>
+<body>
+<div id="app">
+    {{ message }}
+</div>
+
+
+<div id="app2">
+    <span v-bind:title="message">
+        鼠标悬停几秒钟查看此处动态绑定的提示信息！
+    </span>
+</div>
+
+<div id="app3">
+    <p v-if="seen">现在你看到我了</p>
+</div>
+
+
+<div id="app4">
+    <ol>
+        <li v-for="todo in todos">
+            {{ todo.text }}
+        </li>
+    </ol>
+</div>
+
+<div id="app5">
+    <p>{{ message }}</p>
+    <button v-on:click="reverseMessage">逆转消息</button>
+</div>
+
+
+<div id="app6">
+    <p>{{ message }}</p>
+    <input v-model="message">
+</div>
+
+<div id="app8">
+    <span>你好</span>
+    <p>{{ foo }}</p>
+    <button v-on:click="foo='baz'"> Change it</button>
+</div>
+
+<div id="app9">
+    <span>{{a}}</span>
+</div>
+
+<!--在底部引入vue js 文件-->
+<script src="helloworld.js"></script>
+
+</body>
+</html>
