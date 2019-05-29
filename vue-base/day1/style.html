@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+
+</head>
+<body>
+
+
+<div id="app">
+    <input type="text" v-model="message">
+    <input type="text" v-model="newmessage">
+    <button v-on:click="convertMessage">翻转消息</button>
+</div>
+
+
+<script>
+    new Vue({
+        el: '#app',
+        data:{
+            message: "Hello",
+            newmessage: "hai"
+
+        },
+        methods:{
+            convertMessage: function () {
+                this.message = this.message.split('').reverse().join('')
+            }
+        },
+        watch:{
+            message:function (val) {
+                this.newmessage = val + "---"
+            }
+        }
+    })
+</script>
+
+</body>
+</html>

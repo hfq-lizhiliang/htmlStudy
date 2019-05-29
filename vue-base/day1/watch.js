@@ -1,39 +1,68 @@
 var watchExampleVM = new Vue({
-        el: '#watch-example',
-        data: {
-            question: '',
-            answer: 'I cannot give you an answer until you ask a question!'
-        },
-        watch: {
-            // 如果 `question` 发生改变，这个函数就会运行
-            question: function (newQuestion, oldQuestion) {
-                this.answer = 'Waiting for you to stop typing...'
-                this.debouncedGetAnswer()
-            }
-        },
-        created: function () {
-            // `_.debounce` 是一个通过 Lodash 限制操作频率的函数。
-            // 在这个例子中，我们希望限制访问 yesno.wtf/api 的频率
-            // AJAX 请求直到用户输入完毕才会发出。想要了解更多关于
-            // `_.debounce` 函数 (及其近亲 `_.throttle`) 的知识，
-            // 请参考：https://lodash.com/docs#debounce
-            this.debouncedGetAnswer = _.debounce(this.getAnswer, 500)
-        },
-        methods: {
-            getAnswer: function () {
-                if (this.question.indexOf('?') === -1) {
-                    this.answer = 'Questions usually contain a question mark. ;-)';
-                    return
-                }
-                this.answer = 'Thinking...';
-                var vm = this;
-                axios.get('https://yesno.wtf/api')
-                    .then(function (response) {
-                        vm.answer = _.capitalize(response.data.answer)
-                    })
-                    .catch(function (error) {
-                        vm.answer = 'Error! Could not reach the API. ' + error
-                    })
-            }
+    el: '#watch-example',
+    data: {
+        question: '',
+        answer: 'I cannot give you an answer until you ask a question!'
+    },
+    watch: {
+        // 如果 `question` 发生改变，这个函数就会运行
+        question: function (newQuestion, oldQuestion) {
+            this.answer = 'Waiting for you to stop typing...'
+            this.debouncedGetAnswer()
         }
-    });
+    },
+    created: function () {
+        // `_.debounce` 是一个通过 Lodash 限制操作频率的函数。
+        // 在这个例子中，我们希望限制访问 yesno.wtf/api 的频率
+        // AJAX 请求直到用户输入完毕才会发出。想要了解更多关于
+        // `_.debounce` 函数 (及其近亲 `_.throttle`) 的知识，
+        // 请参考：https://lodash.com/docs#debounce
+        this.debouncedGetAnswer = _.debounce(this.getAnswer, 500)
+    },
+    methods: {
+        getAnswer: function () {
+            if (this.question.indexOf('?') === -1) {
+                this.answer = 'Questions usually contain a question mark. ;-)';
+                return
+            }
+            this.answer = 'Thinking...';
+            var vm = this;
+            axios.get('https://yesno.wtf/api')
+                .then(function (response) {
+                    vm.answer = _.capitalize(response.data.answer)
+                })
+                .catch(function (error) {
+                    vm.answer = 'Error! Could not reach the API. ' + error
+                })
+        }
+    }
+});
+
+
+let vm = new Vue({
+    el: "#app2",
+    data: {
+        kilometers: 0,
+        meters: 0
+    },
+    methods: {},
+    computed: {},
+    watch: {
+        kilometers: function (val) {
+            this.kilometers = val;
+            this.meters = this.kilometers * 1000
+        },
+        meters: function (val) {
+            this.meters = val;
+            this.kilometers = this.meters / 1000
+        }
+    }
+
+});
+
+// $watch 是一个实例方法
+vm.$watch('kilometers', function (newValue, oldValue) {
+    // 这个回调将在 vm.kilometers 改变后调用
+    document.getElementById("info").innerHTML = "修改前值为: " + oldValue + "，修改后值为: " + newValue;
+
+});

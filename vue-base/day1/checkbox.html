@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <p>单个复选框</p>
+    <input type="checkbox" id="checkbox" v-model="checked">
+    <label for="checkbox">{{checked}}</label>
+
+    <p>多个复选框</p>
+    <input type="checkbox" id="box1" value="Runoob" v-model="checkedNames">
+    <label for="box1">Runoob</label>
+
+    <input type="checkbox" id="box2" value="Google" v-model="checkedNames">
+    <label for="box2">Google</label>
+    <br>
+    <span>选择的值为: {{ checkedNames }}</span>
+</div>
+
+<script>
+    let vm = new Vue({
+        el: "#app",
+        data: {
+            checked: false,
+            checkedNames: []
+        }
+    });
+
+    vm.$watch('checked', function (nval, oval) {
+        alert(nval + "===" + oval)
+    })
+
+
+</script>
+
+</body>
+</html>
