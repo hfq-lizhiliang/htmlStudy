@@ -1,4 +1,4 @@
-alert('你好');
+import axios from 'axios'
 
 axios.get('/user?ID=12345')
     .then(function (response) {
@@ -8,7 +8,7 @@ axios.get('/user?ID=12345')
         console.log(error);
     });
 
-axios.get('127.0.0.1:8000/polls/')
+axios.get('http://127.0.0.1:8888/polls/')
     .then(function (response) {
         alert(response);
 

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>data属性</title>
+</head>
+<body>
+<ul id="list">
+</ul>
+
+<div id="info"></div>
+
+<script>
+    let data = {
+        01:
+            {
+                name: "张三1",
+                age: "18"
+            },
+        02:
+            {
+                name: "张三2",
+                age: "18"
+            },
+        03:
+            {
+                name: "张三3",
+                age: "18"
+            }
+    }
+
+    //    变量本地化
+    let list = document.getElementById('list');
+
+    for (let id in data) {
+        let item = data[id];
+        let liElement = document.createElement('li')
+//        liElement.innerHTML = item.name
+        liElement.appendChild(document.createTextNode(item.name));
+        list.appendChild(liElement);  //变量本地化
+        liElement.setAttribute('data-name', item.name);
+        liElement.setAttribute('data-age', item.age);
+
+//        此处才将变量加到界面
+        liElement.addEventListener('click', function () {
+//            alert(this.getAttribute('data-age'));
+            console.log(this.dataset);  // dataset属性
+            console.log(this.dataset['age']);
+        })
+    }
+
+</script>
+</body>
+</html>
